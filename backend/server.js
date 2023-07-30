@@ -96,13 +96,13 @@ app.get('/api/subscribe/:author',async(req,res)=>{
     const u = await Users.findOne({_id:req.cookies.uuid})
     const s = await Subscriptions({user:u.email,subscribedTo:req.params.author})
     s.save()
-    res.redirect('/')
+    res.json()
 
 })
 app.get('/api/unsubscribe/:author',async(req,res)=>{
     const u = await Users.findOne({_id:req.cookies.uuid})
     await Subscriptions.deleteOne({user:u.email,subscribedTo:req.params.author})
-    res.redirect('/')
+    res.json()
 
 })
 app.get('/api/following',async(req,res)=>{
@@ -127,7 +127,6 @@ app.get('/api/followers',async(req,res)=>{
         count:followers.length,
         list:followers
 })})
-app.get('/*',(req,res)=>res.sendFile(__dirname+'\\static\\index.html'))
 app.listen(4000,console.log('server ready....'))
 
 
