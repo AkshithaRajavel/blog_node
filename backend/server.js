@@ -127,5 +127,7 @@ app.get('/api/followers',async(req,res)=>{
         count:followers.length,
         list:followers
 })})
-app.get('/*',(req,res)=>res.sendFile('C:\\Users\\AKSHITHA\\Desktop\\wise_works\\blog_node\\backend\\static\\index.html'))
+app.get('/*',(req,res)=>res.sendFile(__dirname+'\\static\\index.html'))
 app.listen(4000,console.log('server ready....'))
+
+
