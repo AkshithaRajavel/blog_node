@@ -1,0 +1,29 @@
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    color: dimgray;
+}
+.form-group{
+    max-width: 60%;
+}
+
+.card{
+    height:25rem;
+    width: 18rem;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px grey;
+}
+.card:hover{
+    box-shadow: 2px 2px 25px grey;
+}
+.card-text{
+    overflow-y: scroll;
+    height:10rem;
+}
+textarea{
+    width: 100%;
+    min-height: 60vh;   
+}
+div{
+    margin: 10px;
+}
